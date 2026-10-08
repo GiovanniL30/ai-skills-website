@@ -122,10 +122,38 @@
   }
   body {
     @apply bg-background text-foreground;
+    transition:
+      background-color 200ms ease,
+      color 200ms ease;
   }
   html {
     @apply font-sans;
     color-scheme: light;
+  }
+  .dark {
+    color-scheme: dark;
+  }
+  ::selection {
+    background-color: var(--foreground);
+    color: var(--background);
+  }
+  .shiki {
+    background-color: transparent !important;
+  }
+  .shiki span {
+    font-weight: var(--shiki-light-font-weight, inherit);
+    font-style: var(--shiki-light-font-style, inherit);
+  }
+  .shiki ::selection {
+    background-color: var(--foreground);
+    color: var(--background);
+    -webkit-text-fill-color: var(--background);
+  }
+  html.dark .shiki,
+  html.dark .shiki span {
+    color: var(--shiki-dark) !important;
+    font-weight: var(--shiki-dark-font-weight, inherit);
+    font-style: var(--shiki-dark-font-style, inherit);
   }
   :focus-visible {
     outline: 2px solid var(--ring);

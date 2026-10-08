@@ -17,7 +17,7 @@ import type { Skill } from '@/lib/skills';
 export const SkillCard = ({ skill }: { skill: Skill }) => {
   return (
     <article data-skill-card={skill.slug} className="h-full min-w-0">
-      <Card className="h-full">
+      <Card className="h-full transition-[transform,border-color] duration-200 hover:-translate-y-0.5 hover:border-foreground/20">
         <CardHeader className="gap-3">
           <Badge variant="outline">{skill.category}</Badge>
           <CardTitle>
