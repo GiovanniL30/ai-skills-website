@@ -122,10 +122,20 @@
   }
   body {
     @apply bg-background text-foreground;
+    transition:
+      background-color 200ms ease,
+      color 200ms ease;
   }
   html {
     @apply font-sans;
     color-scheme: light;
+  }
+  .dark {
+    color-scheme: dark;
+  }
+  ::selection {
+    background-color: var(--foreground);
+    color: var(--background);
   }
   :focus-visible {
     outline: 2px solid var(--ring);

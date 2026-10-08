@@ -2,6 +2,7 @@ import { ExternalLinkIcon, TerminalIcon } from 'lucide-react';
 import Link from 'next/link';
 
 import { MobileNavigation } from '@/components/mobile-navigation';
+import { ThemeToggle } from '@/components/theme-toggle';
 import { repositoryUrl, skills } from '@/lib/skills';
 
 export const SiteHeader = () => {
@@ -14,15 +15,19 @@ export const SiteHeader = () => {
         </Link>
         <div className="hidden items-center gap-5 lg:flex">
           <p className="text-sm text-muted-foreground">A practical toolkit for AI coding</p>
-          <a
-            href={repositoryUrl}
-            aria-label="Agent Skills source on GitHub"
-            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md hover:bg-muted"
-          >
-            <ExternalLinkIcon aria-hidden="true" className="size-5" />
-          </a>
+          <div className="flex items-center gap-1">
+            <ThemeToggle />
+            <a
+              href={repositoryUrl}
+              aria-label="Agent Skills source on GitHub"
+              className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md hover:bg-muted"
+            >
+              <ExternalLinkIcon aria-hidden="true" className="size-5" />
+            </a>
+          </div>
         </div>
-        <div className="lg:hidden">
+        <div className="flex items-center gap-1 lg:hidden">
+          <ThemeToggle />
           <MobileNavigation skillLinks={skills.map(({ slug, title }) => ({ slug, title }))} />
         </div>
       </div>

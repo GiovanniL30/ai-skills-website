@@ -57,6 +57,8 @@ To update content:
 
 Run the configured lint, strict type-check, formatting, and production-build commands. Browser checks should cover all ten public routes, unknown-route 404s, catalog search/category combinations and reset, all skill/agent/scope command combinations, copy success and denied/unavailable clipboard recovery, mobile drawer keyboard behavior, responsive overflow, and on-page navigation. Confirm the complete catalog and guide content with JavaScript disabled and inspect page metadata, `sitemap.xml`, and `robots.txt`.
 
+Theme checks: the header toggle switches between light and dark with no flash on load; the choice persists across reloads and defaults to the system preference when unset; native controls and scrollbars match the active theme; `prefers-reduced-motion` disables the theme and hover transitions. `next-themes` is the theme provider (`src/components/theme-provider.tsx`, `src/components/theme-toggle.tsx`), with the light/dark palettes defined in `src/app/globals.css`.
+
 Browser checks use a temporary Playwright Core harness with the installed Chrome browser; no browser tooling or test framework is added to the application dependencies. Deployment, native agent discovery, and executing the documented installation commands are separate from website verification and are not claimed as tested.
 
 ## Conventions
@@ -67,7 +69,7 @@ Browser checks use a temporary Playwright Core harness with the installed Chrome
 - `@/*` resolves to `src/*`; use it for imports across directories.
 - Prefer Server Components. Add `'use client'` only for state, event handlers, or browser APIs, keeping interactive components small.
 - Use strict TypeScript, named exports for shared components, and default exports where Next.js requires them. Prefer `const` arrow functions, `type` imports, and `async`/`await`.
-- Use the Tailwind spacing scale and semantic shadcn tokens in `src/app/globals.css`: white surfaces, black text and primary buttons, neutral gray borders, and visible focus rings. The site starts in light mode with a system sans-serif font.
+- Use the Tailwind spacing scale and semantic shadcn tokens in `src/app/globals.css`: white surfaces, black text and primary buttons, neutral gray borders, and visible focus rings. The site supports light and dark themes through a header toggle that defaults to the system preference, with a system sans-serif font.
 - Add shadcn/ui components with `npx shadcn@latest add @shadcn/<component>` from this directory. `components.json` records the Base UI primitives, Nova style, Lucide icons, CSS variables, and import aliases.
 
 Setup follows the official [Next.js installation](https://nextjs.org/docs/app/getting-started/installation), [ESLint](https://nextjs.org/docs/app/api-reference/config/eslint), [Tailwind CSS](https://tailwindcss.com/docs/installation/framework-guides/nextjs), and [shadcn/ui](https://ui.shadcn.com/docs/installation/next) documentation. ESLint 9 is retained for compatibility with Next.js's plugin peer dependencies. The installed ESLint skill supplies the import rules, Prettier conventions, editor integration, staged checks, and CI workflow.
