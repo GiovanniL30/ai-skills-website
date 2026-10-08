@@ -15,6 +15,6 @@ export const tutorials: Tutorial[] = [
   },
 ];
 
-export function getTutorial(slug: string): Tutorial | undefined {
+export const getTutorial = (slug: string): Tutorial | undefined => {
   return tutorials.find((tutorial) => tutorial.slug === slug);
-}
+};

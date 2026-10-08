@@ -33,7 +33,7 @@ const sections = [
   { id: 'mental-model', title: '14. Final mental model' },
 ];
 
-function TableOfContents() {
+const TableOfContents = () => {
   return (
     <nav aria-label="On this page">
       <ul className="flex flex-col gap-1">
@@ -50,7 +50,7 @@ function TableOfContents() {
       </ul>
     </nav>
   );
-}
+};
 
 const mainSetupPrompt = `Use the setting-up-agentic-projects skill.
 
@@ -149,7 +149,7 @@ const listStyle = 'flex list-disc flex-col gap-3 pl-5 leading-7 text-muted-foreg
 const orderedListStyle = 'flex list-decimal flex-col gap-3 pl-5 leading-7 text-muted-foreground';
 const linkStyle = 'rounded-sm font-medium underline underline-offset-4';
 
-export default function CreateSubagentTutorialPage() {
+const CreateSubagentTutorialPage = () => {
   return (
     <main id="main-content" tabIndex={-1} className="min-w-0 px-5 py-10 sm:px-8 sm:py-12 lg:px-10">
       <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
@@ -844,4 +844,6 @@ Prompt
       </div>
     </main>
   );
-}
+};
+
+export default CreateSubagentTutorialPage;

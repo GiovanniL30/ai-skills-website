@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { MobileNavigation } from '@/components/mobile-navigation';
 import { repositoryUrl, skills } from '@/lib/skills';
 
-export function SiteHeader() {
+export const SiteHeader = () => {
   return (
     <header className="sticky top-0 z-30 border-b border-border bg-background">
       <div className="mx-auto flex min-h-16 max-w-screen-2xl items-center justify-between gap-4 px-5 sm:px-8">
@@ -28,4 +28,4 @@ export function SiteHeader() {
       </div>
     </header>
   );
-}
+};

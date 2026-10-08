@@ -25,7 +25,7 @@ const primaryLinks = [
   { href: '/tutorials', title: 'Tutorials', icon: GraduationCapIcon },
 ];
 
-export function Navigation({ skillLinks, onNavigate }: NavigationProps) {
+export const Navigation = ({ skillLinks, onNavigate }: NavigationProps) => {
   const pathname = usePathname();
   const linkClasses =
     'flex min-h-11 items-center gap-3 rounded-md px-3 py-2 text-sm leading-5 transition-colors hover:bg-muted';
@@ -71,4 +71,4 @@ export function Navigation({ skillLinks, onNavigate }: NavigationProps) {
       </a>
     </nav>
   );
-}
+};

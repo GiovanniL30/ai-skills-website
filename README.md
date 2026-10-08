@@ -66,7 +66,7 @@ Browser checks use a temporary Playwright Core harness with the installed Chrome
 - `src/lib`: Shared utilities, including `cn()` for composing classes.
 - `@/*` resolves to `src/*`; use it for imports across directories.
 - Prefer Server Components. Add `'use client'` only for state, event handlers, or browser APIs, keeping interactive components small.
-- Use strict TypeScript, named exports for shared components, and default exports where Next.js requires them. Prefer functions, `const`, type imports, and async/await.
+- Use strict TypeScript, named exports for shared components, and default exports where Next.js requires them. Prefer `const` arrow functions, `type` imports, and `async`/`await`.
 - Use the Tailwind spacing scale and semantic shadcn tokens in `src/app/globals.css`: white surfaces, black text and primary buttons, neutral gray borders, and visible focus rings. The site starts in light mode with a system sans-serif font.
 - Add shadcn/ui components with `npx shadcn@latest add @shadcn/<component>` from this directory. `components.json` records the Base UI primitives, Nova style, Lucide icons, CSS variables, and import aliases.
 

@@ -5,7 +5,7 @@ interface CodeBlockProps {
   label: string;
 }
 
-export function CodeBlock({ value, label }: CodeBlockProps) {
+export const CodeBlock = ({ value, label }: CodeBlockProps) => {
   return (
     <div className="min-w-0 overflow-hidden rounded-lg border border-border">
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border px-4 py-2">
@@ -17,4 +17,4 @@ export function CodeBlock({ value, label }: CodeBlockProps) {
       </pre>
     </div>
   );
-}
+};
