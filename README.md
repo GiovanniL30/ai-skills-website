@@ -36,7 +36,7 @@ Run `npm run build` before `npm start`. `npm ci` uses the committed lockfile and
 
 Set `SITE_URL` to the production origin **before building**, for example `https://your-domain.com`. Copy `.env.example` to `.env.local` for local configuration or set the variable through your deployment environment. Use an HTTP(S) origin without a path, credentials, query, or fragment. Invalid values fail early.
 
-Without configuration the origin is `http://localhost:3000`. Every public page has a unique title, description, canonical URL, and Open Graph metadata. `src/app/sitemap.ts` lists the three index pages and five skill guides; `src/app/robots.ts` points to the sitemap. Rebuild after changing the origin. No production domain or hosting service has been configured.
+Without configuration the origin is `http://localhost:3000`. Every public page has a unique title, description, canonical URL, and Open Graph metadata. `src/app/sitemap.ts` lists the four index pages, five skill guides, and the tutorials; `src/app/robots.ts` points to the sitemap. Rebuild after changing the origin. No production domain or hosting service has been configured.
 
 ## Editing catalog content
 
@@ -55,7 +55,7 @@ To update content:
 
 ## Verification
 
-Run the configured lint, strict type-check, formatting, and production-build commands. Browser checks should cover all eight public routes, unknown-route 404s, catalog search/category combinations and reset, all skill/agent/scope command combinations, copy success and denied/unavailable clipboard recovery, mobile drawer keyboard behavior, responsive overflow, and on-page navigation. Confirm the complete catalog and guide content with JavaScript disabled and inspect page metadata, `sitemap.xml`, and `robots.txt`.
+Run the configured lint, strict type-check, formatting, and production-build commands. Browser checks should cover all ten public routes, unknown-route 404s, catalog search/category combinations and reset, all skill/agent/scope command combinations, copy success and denied/unavailable clipboard recovery, mobile drawer keyboard behavior, responsive overflow, and on-page navigation. Confirm the complete catalog and guide content with JavaScript disabled and inspect page metadata, `sitemap.xml`, and `robots.txt`.
 
 Browser checks use a temporary Playwright Core harness with the installed Chrome browser; no browser tooling or test framework is added to the application dependencies. Deployment, native agent discovery, and executing the documented installation commands are separate from website verification and are not claimed as tested.
 

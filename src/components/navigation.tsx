@@ -1,6 +1,12 @@
 'use client';
 
-import { BookOpenIcon, DownloadIcon, ExternalLinkIcon, LayersIcon } from 'lucide-react';
+import {
+  BookOpenIcon,
+  DownloadIcon,
+  ExternalLinkIcon,
+  GraduationCapIcon,
+  LayersIcon,
+} from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -16,6 +22,7 @@ const primaryLinks = [
   { href: '/', title: 'All Skills', icon: LayersIcon },
   { href: '/installation', title: 'Installation', icon: DownloadIcon },
   { href: '/use-cases', title: 'Use Cases', icon: BookOpenIcon },
+  { href: '/tutorials', title: 'Tutorials', icon: GraduationCapIcon },
 ];
 
 export function Navigation({ skillLinks, onNavigate }: NavigationProps) {
