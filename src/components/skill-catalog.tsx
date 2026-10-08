@@ -31,7 +31,7 @@ interface CatalogEntry {
   card: ReactNode;
 }
 
-export function SkillCatalog({ entries }: { entries: CatalogEntry[] }) {
+export const SkillCatalog = ({ entries }: { entries: CatalogEntry[] }) => {
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('All');
   const searchRef = useRef<HTMLInputElement>(null);
@@ -42,11 +42,11 @@ export function SkillCatalog({ entries }: { entries: CatalogEntry[] }) {
       terms.every((term) => entry.searchText.includes(term))
   );
 
-  function reset() {
+  const reset = () => {
     setQuery('');
     setCategory('All');
     searchRef.current?.focus();
-  }
+  };
 
   return (
     <section aria-label="Skills catalog" className="flex flex-col gap-8">
@@ -127,4 +127,4 @@ export function SkillCatalog({ entries }: { entries: CatalogEntry[] }) {
       )}
     </section>
   );
-}
+};

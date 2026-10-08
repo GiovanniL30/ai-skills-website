@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description: siteDescription,
 };
 
-export default function RootLayout({ children }: LayoutProps<'/'>) {
+const RootLayout = ({ children }: LayoutProps<'/'>) => {
   return (
     <html lang="en">
       <body className="min-h-svh bg-background font-sans text-foreground antialiased">
@@ -47,4 +47,6 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

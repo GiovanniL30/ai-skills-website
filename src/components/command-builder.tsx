@@ -14,7 +14,7 @@ interface CommandBuilderProps {
 const selectClasses =
   'min-h-12 w-full min-w-0 rounded-lg border border-input bg-background px-3 text-sm';
 
-export function CommandBuilder({ options }: CommandBuilderProps) {
+export const CommandBuilder = ({ options }: CommandBuilderProps) => {
   const [skill, setSkill] = useState<SkillSlug>('understanding-codebases');
   const [agent, setAgent] = useState<AgentId>('interactive');
   const [scope, setScope] = useState<InstallScope>('project');
@@ -102,4 +102,4 @@ export function CommandBuilder({ options }: CommandBuilderProps) {
       </div>
     </div>
   );
-}
+};

@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-export function DocSection({
+export const DocSection = ({
   id,
   title,
   children,
@@ -8,11 +8,11 @@ export function DocSection({
   id: string;
   title: string;
   children: ReactNode;
-}) {
+}) => {
   return (
     <section id={id} className="flex scroll-mt-24 flex-col gap-5">
       <h2 className="text-2xl font-semibold tracking-tight">{title}</h2>
       {children}
     </section>
   );
-}
+};

@@ -14,7 +14,7 @@ import {
 import { buildInstallCommand } from '@/lib/installation';
 import type { Skill } from '@/lib/skills';
 
-export function SkillCard({ skill }: { skill: Skill }) {
+export const SkillCard = ({ skill }: { skill: Skill }) => {
   return (
     <article data-skill-card={skill.slug} className="h-full min-w-0">
       <Card className="h-full">
@@ -62,4 +62,4 @@ export function SkillCard({ skill }: { skill: Skill }) {
       </Card>
     </article>
   );
-}
+};

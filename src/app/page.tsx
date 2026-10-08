@@ -8,7 +8,7 @@ import { getSearchText, skills } from '@/lib/skills';
 
 export const metadata = createPageMetadata('Skills for your coding agent', siteDescription, '/');
 
-export default function HomePage() {
+const HomePage = () => {
   return (
     <main
       id="main-content"
@@ -48,4 +48,6 @@ export default function HomePage() {
       />
     </main>
   );
-}
+};
+
+export default HomePage;

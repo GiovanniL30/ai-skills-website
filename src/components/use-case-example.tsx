@@ -1,7 +1,7 @@
 import { CodeBlock } from '@/components/code-block';
 import type { UseCase } from '@/lib/skills';
 
-export function UseCaseExample({ useCase }: { useCase: UseCase }) {
+export const UseCaseExample = ({ useCase }: { useCase: UseCase }) => {
   return (
     <div className="flex min-w-0 flex-col gap-5">
       <h3 className="text-xl font-medium tracking-tight">{useCase.title}</h3>
@@ -13,4 +13,4 @@ export function UseCaseExample({ useCase }: { useCase: UseCase }) {
       </p>
     </div>
   );
-}
+};

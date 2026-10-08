@@ -12,16 +12,16 @@ import { getPackageFileUrl, getSkill, skills } from '@/lib/skills';
 
 export const dynamicParams = false;
 
-export function generateStaticParams() {
+export const generateStaticParams = () => {
   return skills.map(({ slug }) => ({ slug }));
-}
+};
 
-export async function generateMetadata({ params }: PageProps<'/skills/[slug]'>) {
+export const generateMetadata = async ({ params }: PageProps<'/skills/[slug]'>) => {
   const { slug } = await params;
   const skill = getSkill(slug);
   if (!skill) notFound();
   return createPageMetadata(skill.title, skill.summary, `/skills/${skill.slug}`);
-}
+};
 
 const sections = [
   { id: 'when-to-use', title: 'When to use it' },
@@ -34,7 +34,7 @@ const sections = [
   { id: 'source', title: 'Source and references' },
 ];
 
-function TableOfContents() {
+const TableOfContents = () => {
   return (
     <nav aria-label="On this page">
       <ul className="flex flex-col gap-1">
@@ -51,9 +51,9 @@ function TableOfContents() {
       </ul>
     </nav>
   );
-}
+};
 
-export default async function SkillPage({ params }: PageProps<'/skills/[slug]'>) {
+const SkillPage = async ({ params }: PageProps<'/skills/[slug]'>) => {
   const { slug } = await params;
   const skill = getSkill(slug);
   if (!skill) notFound();
@@ -215,4 +215,6 @@ export default async function SkillPage({ params }: PageProps<'/skills/[slug]'>)
       </div>
     </main>
   );
-}
+};
+
+export default SkillPage;

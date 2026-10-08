@@ -17,17 +17,17 @@ interface CopyFeedback {
   status: 'copying' | 'copied' | 'failed';
 }
 
-export function CopyButton({
+export const CopyButton = ({
   value,
   label = 'Copy',
   accessibleLabel,
   variant = 'outline',
-}: CopyButtonProps) {
+}: CopyButtonProps) => {
   const [feedback, setFeedback] = useState<CopyFeedback>();
   const status = feedback?.value === value ? feedback.status : undefined;
   const feedbackId = useId();
 
-  async function copy() {
+  const copy = async () => {
     setFeedback({ value, status: 'copying' });
     try {
       if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
@@ -36,7 +36,7 @@ export function CopyButton({
     } catch {
       setFeedback({ value, status: 'failed' });
     }
-  }
+  };
 
   return (
     <div className="flex min-w-0 flex-col items-start gap-2">
@@ -83,4 +83,4 @@ export function CopyButton({
       )}
     </div>
   );
-}
+};
