@@ -1,5 +1,6 @@
 import { siteUrl } from '@/lib/site';
 import { skills } from '@/lib/skills';
+import { tutorials } from '@/lib/tutorials';
 
 import type { MetadataRoute } from 'next';
 
@@ -8,7 +9,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/',
     '/installation',
     '/use-cases',
+    '/tutorials',
     ...skills.map((skill) => `/skills/${skill.slug}`),
+    ...tutorials.map((tutorial) => tutorial.path),
   ].map((path) => ({
     url: `${siteUrl}${path}`,
     changeFrequency: 'monthly',
