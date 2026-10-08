@@ -18,7 +18,7 @@ interface MobileNavigationProps {
   skillLinks: { slug: string; title: string }[];
 }
 
-export function MobileNavigation({ skillLinks }: MobileNavigationProps) {
+export const MobileNavigation = ({ skillLinks }: MobileNavigationProps) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -39,4 +39,4 @@ export function MobileNavigation({ skillLinks }: MobileNavigationProps) {
       </SheetContent>
     </Sheet>
   );
-}
+};

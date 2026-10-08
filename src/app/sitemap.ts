@@ -4,7 +4,7 @@ import { tutorials } from '@/lib/tutorials';
 
 import type { MetadataRoute } from 'next';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+const sitemap = (): MetadataRoute.Sitemap => {
   return [
     '/',
     '/installation',
@@ -17,4 +17,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'monthly',
     priority: path === '/' ? 1 : 0.8,
   }));
-}
+};
+
+export default sitemap;

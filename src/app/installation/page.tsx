@@ -41,7 +41,7 @@ const steps = [
   },
 ];
 
-export default function InstallationPage() {
+const InstallationPage = () => {
   return (
     <main
       id="main-content"
@@ -155,4 +155,6 @@ export default function InstallationPage() {
       </div>
     </main>
   );
-}
+};
+
+export default InstallationPage;

@@ -11,7 +11,7 @@ export const metadata = createPageMetadata(
   '/use-cases'
 );
 
-export default function UseCasesPage() {
+const UseCasesPage = () => {
   return (
     <main
       id="main-content"
@@ -54,4 +54,6 @@ export default function UseCasesPage() {
       </div>
     </main>
   );
-}
+};
+
+export default UseCasesPage;

@@ -514,15 +514,15 @@ export const skills: Skill[] = [
   },
 ];
 
-export function getSkill(slug: string) {
+export const getSkill = (slug: string) => {
   return skills.find((skill) => skill.slug === slug);
-}
+};
 
-export function getPackageFileUrl(skill: Skill, path: string) {
+export const getPackageFileUrl = (skill: Skill, path: string) => {
   return `${repositoryUrl}/blob/main/skills/${skill.packageName}/${path}`;
-}
+};
 
-export function getSearchText(skill: Skill) {
+export const getSearchText = (skill: Skill) => {
   return [
     skill.title,
     skill.packageName,
@@ -531,4 +531,4 @@ export function getSearchText(skill: Skill) {
   ]
     .join(' ')
     .toLowerCase();
-}
+};

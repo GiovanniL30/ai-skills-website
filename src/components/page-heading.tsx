@@ -7,7 +7,7 @@ interface PageHeadingProps {
   children?: ReactNode;
 }
 
-export function PageHeading({ eyebrow, title, description, children }: PageHeadingProps) {
+export const PageHeading = ({ eyebrow, title, description, children }: PageHeadingProps) => {
   return (
     <header className="flex max-w-3xl flex-col gap-5">
       <p className="text-sm font-medium text-muted-foreground">{eyebrow}</p>
@@ -18,4 +18,4 @@ export function PageHeading({ eyebrow, title, description, children }: PageHeadi
       {children}
     </header>
   );
-}
+};

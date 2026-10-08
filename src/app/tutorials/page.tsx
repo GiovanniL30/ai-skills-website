@@ -10,7 +10,7 @@ export const metadata = createPageMetadata(
   '/tutorials'
 );
 
-export default function TutorialsPage() {
+const TutorialsPage = () => {
   return (
     <main
       id="main-content"
@@ -52,4 +52,6 @@ export default function TutorialsPage() {
       </div>
     </main>
   );
-}
+};
+
+export default TutorialsPage;

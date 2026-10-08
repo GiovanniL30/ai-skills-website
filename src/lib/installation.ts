@@ -11,16 +11,16 @@ export const agents = [
 export type AgentId = (typeof agents)[number]['id'];
 export type InstallScope = 'project' | 'global';
 
-export function buildInstallCommand(
+export const buildInstallCommand = (
   skill: SkillSlug,
   agent: AgentId = 'interactive',
   scope: InstallScope = 'project'
-) {
+) => {
   const command = ['npx skills add', installationSource, '--skill', skill];
   if (agent !== 'interactive') command.push('--agent', agent, '--copy');
   if (scope === 'global') command.push('--global');
   return command.join(' ');
-}
+};
 
 export const listSkillsCommand = `npx skills add ${installationSource} --list`;
 export const cliDocumentationUrl = 'https://github.com/vercel-labs/skills#options';

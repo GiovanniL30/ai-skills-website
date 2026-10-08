@@ -18,7 +18,7 @@ export const siteUrl = configuredUrl.origin;
 export const siteDescription =
   'Practical workflows for AI coding agents. Explore five skills for understanding code, implementing features, debugging, frontend design, and project setup.';
 
-export function createPageMetadata(title: string, description: string, path: string): Metadata {
+export const createPageMetadata = (title: string, description: string, path: string): Metadata => {
   const url = `${siteUrl}${path}`;
   const pageTitle = `${title} | Agent Skills`;
   return {
@@ -35,4 +35,4 @@ export function createPageMetadata(title: string, description: string, path: str
     },
     twitter: { card: 'summary', title: pageTitle, description },
   };
-}
+};
